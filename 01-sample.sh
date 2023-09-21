@@ -10,5 +10,5 @@ echo Line2
 
 echo -e "Line1\nLine2"
 
-echo -e "DevOps\tis\tcurrently\in Booming"
+echo -e "DevOps\tis\tcurrently\tin Booming"
 echo Linux is crucial in learning DevOps

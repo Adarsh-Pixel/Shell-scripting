@@ -7,3 +7,5 @@
 echo Welcome to Bash scripting
 echo Line1
 echo Line2
+
+echo Line1\nLine2

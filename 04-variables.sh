@@ -10,6 +10,3 @@ echo "printing the value of a = $a"
 
 echo "printing the value of x: $x"
 
-DATA_DIR=robot
-
-rm -rf /data/${DATA_DIR)/

@@ -13,4 +13,3 @@ echo -e "Line1\nLine2"
 echo -e "DevOps\tis\tcurrently\tin Booming"
 echo Linux is crucial in learning DevOps
 
-echo -e "\e[31m I am printing RED color \e[0m"

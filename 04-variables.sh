@@ -5,5 +5,5 @@ b=20
 c=xyz
 
 echo a
-echo "printing the value of a : $(a)"
+echo "printing the value of a : $a"
 echo "printing the value of a = $a"

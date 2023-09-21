@@ -9,3 +9,6 @@ echo Line1
 echo Line2
 
 echo -e "Line1\nLine2"
+
+echo -e "DevOps\tis\tcurrently\in Booming"
+echo Linux is crucial in learning DevOps

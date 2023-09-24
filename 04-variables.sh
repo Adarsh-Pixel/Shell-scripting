@@ -11,3 +11,5 @@ echo "printing the value of a = $a"
 echo "printing the value of x: $x"
 
 DATE="14SEPT2023"
+
+echo "Today's date is $DATE"

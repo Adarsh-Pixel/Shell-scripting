@@ -3,6 +3,11 @@
 a=10
 b=20
 c=30
+
+echo "the value of a is $a"
+echo "the value of b is $b"
+echo "the value of c is $c"
+
 echo $0
 # special variables gives special properties to your variables
 

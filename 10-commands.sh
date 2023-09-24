@@ -1,6 +1,6 @@
 #!/bin/bash
 
-There are four types of commands available: 
+# There are four types of commands available: 
 
 # Binary (#bin ...../sbin)
 # aliases
@@ -9,7 +9,12 @@ There are four types of commands available:
 
 # To declar a funtion
 
-f() {
-    echo Hai
+sample() {
+    echo this is a sample funtion
+    echo sample funtion is completed
 }
-f 
+sample
+
+echo sample call is completed
+
+sample

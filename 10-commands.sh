@@ -9,12 +9,9 @@
 
 # To declar a funtion
 
-sample() {
-    echo this is a sample funtion
-    echo sample funtion is completed
+stat() {
+    echo "Number of sessions opened are $(who | wc -l)"
+    echo "today's date is $(date +%F)"
 }
-sample
+stat
 
-echo sample call is completed
-
-sample

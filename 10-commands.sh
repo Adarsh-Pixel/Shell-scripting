@@ -16,7 +16,7 @@ hai() {
 stat() {
     echo "Number of sessions opened are $(who | wc -l)"
     echo "today's date is $(date +%F)"
-    echo "Avg CPU utilization is last 5 mins $(uptime | awk -F : '{print $NF}'"
+    echo "Avg CPU utilization is last 5 mins $(uptime | awk -F : '{print $NF}')"
     #calling another funtion
     hai
 }

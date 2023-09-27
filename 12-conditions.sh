@@ -12,15 +12,15 @@ Action=$1
 
 case $Action in
     start)
-        echo "\e[32m Starting payment Service \e[0m"
+        echo -e "\e[32m Starting payment Service \e[0m"
         ;;
     stop)
-        echo "\e[31mStopping Payment Service \e[0m"
+        echo -e "\e[31mStopping Payment Service \e[0m"
         ;;
     restart)
-        echo "\e[33mRestarting Payment Service \e[0m"
+        echo -e "\e[33mRestarting Payment Service \e[0m"
         ;;
     *)
-        echo "\e[33mValid options are start or stop or restart \e{0m"
+        echo -e "\e[33mValid options are start or stop or restart \e{0m"
         echo -e "example usage: \n \tbash Scriptname stop"
 esac

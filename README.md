@@ -17,3 +17,29 @@ This repository contains all the basics needed to learn bash scripting. The majo
 ...
     $ code folderName
 ...
+
+
+### Expressions are categorized into three
+
+    1. Numbers
+    2. Strings
+    3. Files
+
+Operators on numbers:
+
+    -eq , -ne , -gt, -ge, -lt, -le
+
+    [ 1 -eq 1 ]
+    [ 1 -ne 1 ]
+
+Operators on Strings:
+    = , == , !=
+
+    [ abc = abc ]
+
+    -z , -n
+
+    [ -z "$var" ] -> This is true if var is not having any data
+    [ -n "$var" ] -> This is true if var is having any data
+
+    -z and -n are inverse propotional options

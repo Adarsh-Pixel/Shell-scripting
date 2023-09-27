@@ -20,4 +20,7 @@ case $Action in
     restart)
         echo "Restarting Payment Service"
         ;;
+    *)
+        echo "Valid options are start or stop or restart"
+        echo "example usage: bash Scriptname stop"
 esac

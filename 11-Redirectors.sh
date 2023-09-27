@@ -14,3 +14,7 @@
 # ls -ltr     >> output.txt   #Redirects & appends the output to output.txt
 # ls -ltr     2> output.txt   #Redirects the error only to output.txt
 # ls -ltr     &> output.txt   #Redirects the output or error to output.txt
+
+exit 1
+
+echo Hai

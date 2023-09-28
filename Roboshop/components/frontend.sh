@@ -15,7 +15,6 @@ stat () {
 else
     echo -e "\e[31m failure \e[0m"
     fi 
-    exit 2
 }
 
 echo -e "\e[35m Congiguring frontend.....! \e[0m \n"

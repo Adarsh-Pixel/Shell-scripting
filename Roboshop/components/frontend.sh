@@ -49,6 +49,8 @@ mv static/* .                    &>> /tmp/frontend.log
 rm -rf frontend-main README.md   &>> /tmp/frontend.log   
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 
+stat $?
+
 # yum install nginx -y
 # systemctl enable nginx
 # systemctl start nginx

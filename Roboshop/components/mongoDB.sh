@@ -29,15 +29,15 @@ echo -n "installing ${COMPONENT}  :"
 yum install -y mongodb-org      &>> ${LOGFILE}
 stat $?
 
-echo -n "starting the ${COMPONENT}  :"
-systemctl enable mongod         &>> ${LOGFILE}
-systemctl start mongod          &>> ${LOGFILE}
-stat $?
 
 echo -n "enabling the ${COMPONENT} visibility :"
 sed -ie 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
 stat $?
 
+echo -n "starting the ${COMPONENT}  :"
+systemctl enable mongod         &>> ${LOGFILE}
+systemctl start mongod          &>> ${LOGFILE}
+stat $?
 
 
 # curl -s -L -o /tmp/mongodb.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "I am mongoDB"
+echo "I am mongodb"
 
 USER_ID=$(id -u)
 COMPONENT=mongodb

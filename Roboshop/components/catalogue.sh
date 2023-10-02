@@ -29,10 +29,12 @@ echo -n "installing ${COMPONENT}  :"
 yum install nodejs -y      &>> ${LOGFILE}
 stat $?
 
-echo -e "Creating application user account :"
-useradd roboshop
-stat $?
-
+id ${APPUSER}
+if [$? -nq 0] ; then
+    echo -e "Creating application user account :"
+    useradd roboshop
+    stat $?
+fi 
 # echo -n "enabling the ${COMPONENT} visibility :"
 # sed -ie 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
 # stat $?

@@ -51,6 +51,12 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 
 stat $?
 
+echo -n "restarting frondend :"
+systemctl daemon-reload         &>> /tmp/frontend.log
+systemctl restart nginx         &>> /tmp/frontend.log
+
+stat $?
+
 # yum install nginx -y
 # systemctl enable nginx
 # systemctl start nginx

@@ -33,7 +33,7 @@ stat $?
 
 
 echo -n "Downloading the ${COMPONENT} component:"
-curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 stat $?
 
 echo -n "Clean up of ${COMPONENT} : "

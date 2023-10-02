@@ -35,20 +35,18 @@ if [ $? -ne 0 ] ; then
     useradd roboshop
     stat $?
 fi 
-# echo -n "enabling the ${COMPONENT} visibility :"
-# sed -ie 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf
-# stat $?
 
-# echo -n "starting the ${COMPONENT}  :"
-# systemctl enable mongod         &>> ${LOGFILE}
-# systemctl start mongod          &>> ${LOGFILE}
-# stat $?
+echo -n "Downloading the ${COMPONENT} Schema :"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+stat $?
 
-# echo -n "Downloading the ${COMPONENT} Schema :"
-# curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
-# stat $?
 
-# echo -n "Extracting the ${COMPONENT} Schema :"
+echo -n "Copying  the ${COMPONENT} to ${APPUSER} home directory :"
+cd /home/${APPUSER}
+rm rf ${COMPONENT}           &>> ${LOGFILE}
+unzip /tmp/catalogue.zip     &>> ${LOGFILE}
+stat $?
+
 # cd /tmp
 # unzip -o ${COMPONENT}.zip        &>> ${LOGFILE}
 # stat $?

@@ -5,6 +5,7 @@ echo "I am catalogue"
 USER_ID=$(id -u)
 COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}.log"
+APPUSER="roboshop"
 
 if [ $USER_ID -ne 0 ] ; then
     echo -e "\e[31m Script is expected to be executed by the root user or with a sudo privilage \e[0m \n \t Example: \n\t\t sudo bash wrapper.sh frontend"

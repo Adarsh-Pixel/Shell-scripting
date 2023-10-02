@@ -35,7 +35,7 @@ systemctl start mongod          &>> ${LOGFILE}
 stat $?
 
 echo -n "enabling the ${COMPONENT} visibility :"
-sed -ie 's/127.0.0.1/0.0.0.0/g' mongod.conf
+sed -ie 's/127.0.0.1/0.0.0.0/g' mongodb.conf
 stat $?
 
 # systemctl restart mongod

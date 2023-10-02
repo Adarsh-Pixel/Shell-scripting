@@ -42,7 +42,7 @@ rm -rf *    &>> ${LOGFILE}
 stat $?
 
 echo -n "Extracting ${COMPONENT} : "
-unzip /tmp/frontend.zip &>> ${LOGFILE}
+unzip /tmp/${COMPONENT}.zip &>> ${LOGFILE}
 stat $?
 
 echo -n "Sorting the ${COMPONENT} files : "

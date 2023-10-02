@@ -58,6 +58,15 @@ cd /home/${APPUSER}/${COMPONENT}/
 npm install             &>> ${LOGFILE}
 stat $?
 
+echo -n "configuring the ${COMPONENT} system file :"
+sed -ie 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
+mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
+stat $?
+
+echo -n "starting the ${COMPONENT} service :"
+systemctl daemon-reload ${COMPONENT}    &>> ${LOGFILE}
+systemctl enable ${COMPONENT}           &>> ${LOGFILE}
+systemctl restart ${COMPONENT}          &>> ${LOGFILE}
 
 # cd /tmp
 # unzip -o ${COMPONENT}.zip        &>> ${LOGFILE}

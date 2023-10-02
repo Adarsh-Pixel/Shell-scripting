@@ -68,7 +68,7 @@ systemctl daemon-reload ${COMPONENT}    &>> ${LOGFILE}
 systemctl enable ${COMPONENT}           &>> ${LOGFILE}
 systemctl restart ${COMPONENT}          &>> ${LOGFILE}
 
-echo -e "\e[35 ${COMPONENT} installation is completed \e[0m \n"
+echo -e "\e[35m ${COMPONENT} installation is completed \e[0m \n"
 
 # cd /tmp
 # unzip -o ${COMPONENT}.zip        &>> ${LOGFILE}

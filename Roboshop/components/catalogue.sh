@@ -48,6 +48,17 @@ rm -rf ${COMPONENT}           &>> ${LOGFILE}
 unzip -o /tmp/${COMPONENT}.zip     &>> ${LOGFILE}
 stat $?
 
+echo -n "changing the ownership :"
+mv ${COMPONENT}-main ${COMPONENT}
+chown -R ${APPUSER}:${APPUSER} /home/${APPUSER}/${COMPONENT}
+stat $?
+
+echo -n "generating the ${COMPONENT} artifacts :"
+cd /home/${APPUSER}/${COMPONENT}/
+npm install             &>> ${LOGFILE}
+stat $?
+
+
 # cd /tmp
 # unzip -o ${COMPONENT}.zip        &>> ${LOGFILE}
 # stat $?

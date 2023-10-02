@@ -50,8 +50,8 @@ stat $?
 
 echo -n "Injecting the ${COMPONENT} Schema :"
 cd mongodb-main         
-mongo < catalogue.js    
-mongo < users.js        
+mongo < catalogue.js    &>> ${LOGFILE}
+mongo < users.js        &>> ${LOGFILE}
 stat $?
 
 echo -e "\e[35 ${COMPONENT} installation is completed \e[0m \n"

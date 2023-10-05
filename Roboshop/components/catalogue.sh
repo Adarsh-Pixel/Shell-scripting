@@ -71,15 +71,3 @@ stat $?
 
 echo -e "\e[35m ${COMPONENT} installation is completed \e[0m \n"
 
-# cd /tmp
-# unzip -o ${COMPONENT}.zip        &>> ${LOGFILE}
-# stat $?
-
-# echo -n "Injecting the ${COMPONENT} Schema :"
-# cd ${COMPONENT}-main         
-# mongo < catalogue.js        &>> ${LOGFILE}
-# mongo < users.js            &>> ${LOGFILE}
-# stat $?
-
-
-# echo -e "\e[35m ${COMPONENT} installation is completed \e[0m"

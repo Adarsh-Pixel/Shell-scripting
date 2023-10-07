@@ -21,7 +21,7 @@ systemctl start mysqld   &>> ${LOGFILE}
 stat $?
 
 echo -n "Extracting the default mysql root password :"
-DEFAULT_ROOT_PASSWORD=grep "temporary password"  /var/log/mysqld.log | gawk -F : '{print $NF}'
+DEFAULT_ROOT_PASSWORD=$(grep "temporary password"  /var/log/mysqld.log | awk -F : '{print $NF}')
 stat $?
 
 #This should happen only once and that too for the first time, when it runs for the second time the jobs fail

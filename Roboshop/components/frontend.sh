@@ -50,8 +50,12 @@ mv ${COMPONENT}-main/* .              &>> ${LOGFILE}
 mv static/* .                    &>> ${LOGFILE}
 rm -rf ${COMPONENT}-main README.md   &>> ${LOGFILE}  
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
-
 stat $?
+
+echo -n "updating the backend components in the reverse proxy file:"
+for component in catalogue user cart ;do 
+    sed -i -e "/${component}/s/localhost/${component}.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
+
 
 echo -n "restarting ${COMPONENT} :"
 systemctl daemon-reload         &>> ${LOGFILE}

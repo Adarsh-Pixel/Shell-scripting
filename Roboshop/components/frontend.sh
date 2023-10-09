@@ -63,5 +63,5 @@ systemctl restart nginx         &>> ${LOGFILE}
 
 stat $?
 
-echo -e "\e[35 ${COMPONENT} installation is completed \e[0m \n"
+echo -e "\e[35m ${COMPONENT} installation is completed \e[0m \n"
 stat $?

@@ -49,7 +49,7 @@ DOWNLOAD_AND_EXTRACT() {
 CONFIG_SVC(){
 
         echo -n "configuring the ${COMPONENT} system file :"
-        sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/'  -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
+        sed -i -e 's/CARTENDPOINT/cart.roboshop.internal/'  -e 's/DBHOST/mysql.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
         mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
         stat $?
 
@@ -81,5 +81,32 @@ NODEJS() {
         cd /home/${APPUSER}/${COMPONENT}/
         npm install             &>> ${LOGFILE}
         stat $?
+
+        CONFIG_SVC
+
+}
+
+MVN_PACKAGE() {
+        echo -n "generating the ${COMPONENT} artifacts :"
+        cd /home/${APPUSER}/${COMPONENT}/
+        mvn clean package               &>> ${LOGFILE}
+        mv target/shipping-1.0.jar shipping.jar
+        stat $?
+}
+
+JAVA() {
+        echo -e "\e[35m Congiguring ${COMPONENT}.....! \e[0m \n"
+
+        echo -n "Installing Maven:"
+        yum install maven -y          &>> ${LOGFILE}
+        stat $?
+
+        CREATE_USER
+
+        DOWNLOAD_AND_EXTRACT
+
+        MVN_PACKAGE
+
+        CONFIG_SVC
 
 }

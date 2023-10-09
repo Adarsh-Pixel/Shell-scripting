@@ -49,7 +49,7 @@ DOWNLOAD_AND_EXTRACT() {
 CONFIG_SVC(){
 
         echo -n "configuring the ${COMPONENT} system file :"
-        sed -i -e 's/CARTENDPOINT/cart.roboshop.internal/'  -e 's/DBHOST/mysql.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
+        sed -i -e 's/CARTHOST/cart.roboshop.internal/'  -e 's/USERHOST/user.roboshop.internal/' -e 's/AMQPHOST/rabbitmq.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
         mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
         stat $?
 

@@ -55,7 +55,7 @@ stat $?
 echo -n "updating the backend components in the reverse proxy file:"
 for component in catalogue user cart ;do 
     sed -i -e "/${component}/s/localhost/${component}.roboshop.internal/" /etc/nginx/default.d/roboshop.conf
-
+done
 
 echo -n "restarting ${COMPONENT} :"
 systemctl daemon-reload         &>> ${LOGFILE}
@@ -64,3 +64,4 @@ systemctl restart nginx         &>> ${LOGFILE}
 stat $?
 
 echo -e "\e[35 ${COMPONENT} installation is completed \e[0m \n"
+stat $?

@@ -122,5 +122,8 @@ PYTHON() {
 
         DOWNLOAD_AND_EXTRACT
 
+echo -n "Generating the artifacts :"
+cd /home/${APPUSER}/${COMPONENT}/
 pip3 install -r requirements.txt
+stat $?
 }

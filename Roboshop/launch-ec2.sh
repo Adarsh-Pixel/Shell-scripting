@@ -20,6 +20,6 @@ SG_ID="sg-03e9f6f3171da279d"
 
 aws ec2 run-instances --image-id ${AMI_ID} --instance-type {INSTANCE_TYPE}  --security-group-ids ${SG_ID} 
 
---tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]' 
+--tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" 
 
 #Each & every resource we create in Ent will have tags

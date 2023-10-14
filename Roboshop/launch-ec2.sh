@@ -29,4 +29,4 @@ sed -e "s/COMPONENT/${COMPONENT}/" -e "s/IPADDRESS/${PRIVATEIP}/" route53.json >
 aws route53 change-resource-record-sets --hosted-zone-id $Hosted_Zone_ID --change-batch file:///tmp/r53.json 
 echo -e "Private IP address of the $COMPONENT is created and ready to use on ${COMPONENT}.roboshop.internal"
 
-echo -e "****** CREATING DNS record for $COMPONENT has been completed *****
+echo -e "****** CREATING DNS record for $COMPONENT has been completed *****"

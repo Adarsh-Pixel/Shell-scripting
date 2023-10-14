@@ -28,7 +28,7 @@ echo -e "Private IP address of the $COMPONENT is created and ready to use on ${C
 echo -e "****** CREATING DNS record for $COMPONENT has been completed *****"
 }
 
-if [ "$1" == "all"]; then 
+if [ "$1" == "all" ]; then 
     for component in mongodb catalogue cart user shipping frontend payment mysql  redit rabbitmq; do 
         COMPONENT=$component 
         create_ec2

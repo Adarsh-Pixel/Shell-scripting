@@ -16,13 +16,13 @@ AMI_ID="$(aws ec2 describe-images --filters "Name=name,Values=DevOps-LabImage-Ce
 SG_ID="$(aws ec2 describe-security-groups --filters Name=group-name,Values=b55-allow-all | jq ".SecurityGroups[].GroupId" | sed -e 's/"//g')"
 
 create_ec2() {
-echo -e "***** CREATING \e35m ${COMPONENT}-${EMV} \e[0m server is in progress *****"
-PRIVATEIP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}-${EMV}}]" | jq '.Instances[].PrivateIpAddress' | sed -e 's/"//g')
+echo -e "***** CREATING \e35m ${COMPONENT}-${ENV} \e[0m server is in progress *****"
+PRIVATEIP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}-${ENV}}]" | jq '.Instances[].PrivateIpAddress' | sed -e 's/"//g')
 
-echo -e "Private IP Address of $COMPONENT-${EMV} is $PRIVATEIP \n\n"
+echo -e "Private IP Address of $COMPONENT-${ENV} is $PRIVATEIP \n\n"
 
 #Each & every resource we create in Ent will have tags
-sed -e "s/COMPONENT/${COMPONENT}-${EMV}/" -e "s/IPADDRESS/${PRIVATEIP}/" route53.json > /tmp/r53.json 
+sed -e "s/COMPONENT/${COMPONENT}-${ENV}/" -e "s/IPADDRESS/${PRIVATEIP}/" route53.json > /tmp/r53.json 
 aws route53 change-resource-record-sets --hosted-zone-id $Hosted_Zone_ID --change-batch file:///tmp/r53.json 
 echo -e "Private IP address of the $COMPONENT is created and ready to use on ${COMPONENT}.roboshop.internal"
 
